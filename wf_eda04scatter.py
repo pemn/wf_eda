@@ -13,8 +13,8 @@ def main(self = None):
   df = pd.read_excel(self.get('sample_db'))
   df.mask(df == -99, inplace=True)
   xyz = pd_detect_xyz(df)
-  display(FeedBackText(name = self.step_name))
-  display(hv.Overlay([hv.Scatter(rd, xyz[0], xyz[1], label=ri) for ri,rd in df.groupby(self.get('lito_field'))]).opts(fig_size=150))
+  display(FeedBackText(self, name = self.step_name))
+  display(hv.Overlay([hv.Scatter(rd, xyz[0], xyz[1], label=ri) for ri,rd in df.groupby(self.get('lito_field'))]).opts(fig_size=150, title='%s %s ✕ %s' % (self.get('lito_field'), xyz[0], xyz[1])))
   return display()
 
 if __name__=='__main__':

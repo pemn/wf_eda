@@ -243,7 +243,9 @@ class WorkFlowForm(WorkFlowBase):
 def s_step_panel(self):
   ''' render a step according to the custom payload '''
   r = None
-  if self.step_name is None:
+  log('s_step_panel')
+  log(self)
+  if self is None or self.step_name is None:
     ...
   elif not self.get(self.step_name):
     r = pn.pane.Markdown('# 💤 ' + self.step_name)
@@ -319,6 +321,8 @@ class FeedBackText(param.Parameterized):
         self._w.value = f.read()
 
   def save(self, event = None):
+    log('save')
+    log(self._p)
     with open(self.name + '.txt', 'w') as f:
       f.write(self._w.value)
     # fire the entire render of this step, so the html output file is updated

@@ -13,7 +13,7 @@ def main(self = None):
   df = pd.read_excel(self.get('sample_db'))
   df.mask(df == -99, inplace=True)
   xyz = pd_detect_xyz(df)
-  display(FeedBackText(name = self.step_name))
+  display(FeedBackText(self, name = self.step_name))
   for v in self.get('grade_fields'):
     display(hv.BoxWhisker(df, kdims=self.get('lito_field'), vdims=v, label=v))
   return display()
