@@ -1,0 +1,26 @@
+- - sample_db
+  - FileSelector
+  - vox_samples_rand.xlsx
+- - lito_field
+  - String
+  - lito
+- - length_field
+  - String
+  - length
+- - grade_fields
+  - List
+  - - grade1
+    - grade2
+    - grade3
+- - wf_eda01stats
+  - Filename
+  - true
+- - wf_eda02boxplot
+  - Filename
+  - true
+- - wf_eda03histogram
+  - Filename
+  - true
+- - wf_eda04scatter
+  - Filename
+  - true
